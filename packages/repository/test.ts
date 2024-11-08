@@ -1,1 +1,1 @@
-const myVar = "Hello World"
+const myVar = "Hello World 2"
