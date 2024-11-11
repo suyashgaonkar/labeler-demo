@@ -1,15 +1,16 @@
-name: "Pull Request Labeler"
-on:
-  workflow_dispatch:
+name: Labeler
+on: [pull_request]
 
 jobs:
-  labeler:
+  label:
+  
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
-    runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/labeler@v5
+    - uses: actions/labeler@v2
       with:
-        repo-token: ${{ secrets.GITHUB.TOKEN}}
-        pr-number: ${{ github.event.number }}
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        sync-labels: true
