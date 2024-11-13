@@ -1,0 +1,1 @@
+const myVar = "Hello World 2 11112024"
