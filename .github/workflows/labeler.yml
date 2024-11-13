@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4 # Uploads repository content to the runner
       with:
-        repository: "suyashgaonkar/labeler-test"
+        repository: "suyashgaonkar/labeler-demo"
     - uses: actions/labeler@v5
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
