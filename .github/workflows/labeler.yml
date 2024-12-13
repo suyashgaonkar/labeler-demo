@@ -1,7 +1,8 @@
-name: Labeler
+name: Labeler Issue 818
 on: 
+  workflow_dispatch:
   pull_request: 
-    types: [ opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   label:
@@ -20,4 +21,3 @@ jobs:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: '.github/labeler.yml'
         sync-labels: true
-        pr-number: 2
