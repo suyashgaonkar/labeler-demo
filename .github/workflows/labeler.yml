@@ -1,6 +1,5 @@
-name: Labeler Issue 798
-on: 
-  workflow_dispatch:
+name: Labeler Issue 798 gh runner
+on:
   pull_request: 
     types: [opened, synchronize, reopened, closed]
 
