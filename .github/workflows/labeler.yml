@@ -1,6 +1,5 @@
 name: Labeler Issue 818
 on: 
-  workflow_dispatch:
   pull_request: 
     types: [opened, synchronize, reopened, closed]
 
