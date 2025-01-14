@@ -1,17 +1,3 @@
 Documentation:
-- any:
-    - changed-files:
-        - javascript: ["**/*.js", "**/*.jsx"]
-        - typescript: ["**/*.ts", "**/*.tsx"]
-        - python: ["**/*.py"]
-        - terraform: ["**/*.tf"]
-        - shell: ["**/*.sh"]
-        - api: ["api/**/*"]
-        - frontend: ["frontend/**/*"]
-        - analytics: ["analytics/**/*"]
-        - ci/cd: [".github/workflows/**/*", "bin/**/*", "**/*/Makefile"]
-        - documentation: ["documentation/**/*", "**/*.md"]
-        - infra: ["infra/**/*"]
-        - database: ["api/src/db/**/*"]
-        - openapi: ["api/openapi.generated.yaml"]
-        - storybook: ["frontend/stories/**/*", "frontend/.storybook/**/*"]
+      - changed-files:
+        - any-glob-to-any-file: ['docs/*']
