@@ -1,17 +1,23 @@
-Documentation:
-- any:
-    - changed-files:
-        - javascript: ["**/*.js", "**/*.jsx"]
-        - typescript: ["**/*.ts", "**/*.tsx"]
-        - python: ["**/*.py"]
-        - terraform: ["**/*.tf"]
-        - shell: ["**/*.sh"]
-        - api: ["api/**/*"]
-        - frontend: ["frontend/**/*"]
-        - analytics: ["analytics/**/*"]
-        - ci/cd: [".github/workflows/**/*", "bin/**/*", "**/*/Makefile"]
-        - documentation: ["documentation/**/*", "**/*.md"]
-        - infra: ["infra/**/*"]
-        - database: ["api/src/db/**/*"]
-        - openapi: ["api/openapi.generated.yaml"]
-        - storybook: ["frontend/stories/**/*", "frontend/.storybook/**/*"]
+name: Labeler Issue 798
+on: 
+  workflow_dispatch:
+  pull_request: 
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v4 # Uploads repository content to the runner
+      with:
+        sparse-checkout: |
+          .github
+    - uses: actions/labeler@v5
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: '.github/labeler.yml'
+        sync-labels: true
