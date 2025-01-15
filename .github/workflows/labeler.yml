@@ -1,4 +1,4 @@
-name: Labeler Issue 818
+name: Labeler
 on: 
   pull_request: 
     types: [opened, synchronize, reopened, closed]
