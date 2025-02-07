@@ -1,3 +1,6 @@
 Documentation:
       - changed-files:
         - any-glob-to-any-file: ['docs/*']
+Documentation2:
+      - changed-files:
+        - any-glob-to-any-file: ['docs/*']
