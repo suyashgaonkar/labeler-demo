@@ -23,7 +23,7 @@ jobs:
         # repo-token: ${{ secrets.GITHUB_TOKEN }}
         operations-per-run: 100 # This should be temporary.
         # exempt-issue-labels: ehancement,good first issue
-        #exempt-issue-labels: '!stale'
+        exempt-issue-labels: '!stale'
         stale-issue-label: 'ActionsCache'
         stale-pr-label: 'ActionsCache'
         days-before-issue-stale: 1
