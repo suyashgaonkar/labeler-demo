@@ -1,6 +1,6 @@
-github_workflow_changes:
+Docs:
       - changed-files:
-        - any-glob-to-any-file: ['.github/*']
-made_restricted_changes:
+        - any-glob-to-any-file: ['docs/*']
+Examples:
       - changed-files:
-        - any-glob-to-any-file: ['.github/*']
+        - any-glob-to-any-file: ['examples/*']

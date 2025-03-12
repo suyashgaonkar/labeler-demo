@@ -1,1 +1,1 @@
-SOme new features
+Issue 841
