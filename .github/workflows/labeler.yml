@@ -3,8 +3,6 @@ name: Labeler Issue 841
 on: 
   pull_request: 
     types: [opened, synchronize, reopened, closed]
-  push:
-
 jobs:
   label:
     runs-on: ubuntu-latest
