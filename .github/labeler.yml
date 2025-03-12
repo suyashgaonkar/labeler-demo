@@ -1,6 +1,6 @@
 Docs:
   - changed-files:
-    - any-glob-to-any-file: ['docs/*']
+    - any-glob-to-any-file: ['docs/**']
 Examples:
   - changed-files:
-    - any-glob-to-any-file: ['examples/*']
+    - any-glob-to-any-file: ['examples/**']
