@@ -1,20 +1,37 @@
-name: PRL (test-2)
-on: 
-  pull_request_target: 
-    types: [opened, reopened, closed]
+# name: PRL (test-2)
+# on: 
+#   pull_request_target: 
+#     types: [opened, reopened, closed]
+# jobs:
+#   label:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       pull-requests: write
+
+#     steps:
+#     - uses: actions/checkout@v4 # Uploads repository content to the runner
+#       with:
+#         sparse-checkout: |
+#           .github
+#     - uses: actions/labeler@v5
+#       with:
+#         sync-labels: false
+#         dot: true
+
+on:
+  pull_request:
+    types: [ closed ]
 jobs:
-  label:
+  delete_channel:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write
-
+      id-token: write
     steps:
-    - uses: actions/checkout@v4 # Uploads repository content to the runner
-      with:
-        sparse-checkout: |
-          .github
-    - uses: actions/labeler@v5
-      with:
-        sync-labels: false
-        dot: true
+      - name: チェックアウト
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - id: pr_labels
+        uses: actions/labeler@v5
