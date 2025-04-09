@@ -18,7 +18,7 @@
 #       with:
 #         sync-labels: false
 #         dot: true
-
+name: issue 775
 on:
   pull_request:
     types: [ closed ]
