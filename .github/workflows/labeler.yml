@@ -27,6 +27,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      pull-requests: write
     steps:
       - name: チェックアウト
         uses: actions/checkout@v4
