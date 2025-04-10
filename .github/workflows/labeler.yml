@@ -25,8 +25,9 @@ jobs:
   delete_channel:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
       id-token: write
+      contents: read
+      pull-requests: write
     steps:
       - name: チェックアウト
         uses: actions/checkout@v4
