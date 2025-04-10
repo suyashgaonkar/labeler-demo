@@ -2,6 +2,11 @@
 # on: 
 #   pull_request_target: 
 #     types: [opened, synchronize, reopened, closed]
+#name: Labeler Issue 775
+# on: 
+#   pull_request_target: 
+#     types: [opened, reopened, closed]
+
 # jobs:
 #   label:
 #     runs-on: ubuntu-latest
@@ -16,6 +21,7 @@
 #           .github
 #     - uses: actions/labeler@v5
 #       with:
+
 #         sync-labels: true
 #         dot: true
 name: issue 775
@@ -29,7 +35,6 @@ jobs:
       id-token: write
       contents: read
       pull-requests: write
-
     steps:
       - name: チェックアウト
         uses: actions/checkout@v4
@@ -37,3 +42,4 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - id: pr_labels
         uses: actions/labeler@v5
+
