@@ -25,13 +25,13 @@ jobs:
   delete_channel:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: read
-      pull-requests: write
+      id-token: write
     steps:
       - name: チェックアウト
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+      # ...
       - id: pr_labels
         uses: actions/labeler@v5
