@@ -18,21 +18,41 @@ name: Labeler Issue 775
 #       with:
 #         sync-labels: false
 #         dot: true
+# on:
+#   pull_request:
+#     types: [ closed ]
+# jobs:
+#   delete_channel:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       id-token: write
+#       pull-requests: write
+#     steps:
+#       - name: チェックアウト
+#         uses: actions/checkout@v4
+#         with:
+#           ref: ${{ github.event.pull_request.head.sha }}
+#       # ...
+#       - id: pr_labels
+#         uses: actions/labeler@v5
+
+name: PR Labeler - issue 870
+
 on:
-  pull_request:
-    types: [ closed ]
+  pull_request_target:
+    types: [opened, synchronize]
+
 jobs:
-  delete_channel:
+  label:
+    name: Add PR labels
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      id-token: write
       pull-requests: write
     steps:
-      - name: チェックアウト
+      - name: Checkout the repository
         uses: actions/checkout@v4
+      - uses: actions/labeler@v5
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      # ...
-      - id: pr_labels
-        uses: actions/labeler@v5
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          sync-labels: true
